@@ -7,6 +7,6 @@ function start()
     document.getElementById("comprobar").innerHTML = "Escribiste tu matricula bien? '" + studentID + "'"
     if (usernames.includes(studentID))
     {
-        window.location.href += "resultados/2022/" + studentID + ".pdf";
+        window.location.href += studentID + ".pdf";
     }
 }
