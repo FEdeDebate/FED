@@ -596,9 +596,9 @@ legend {
   text-decoration: underline;
 }
 
-/* makes text input white and pretty */
+/* makes text input dark grey and pretty */
 .s003 form .inner-form {
-  background: #fff;
+  background: #1a1a1a;
   display: -ms-flexbox;
   display: flex;
   width: 80%;
@@ -634,13 +634,13 @@ legend {
   width: 100%;
   padding: 10px 32px;
   font-size: 16px;
-  color: #555;
+  color: #aaaaaa;
   font-family: 'Poppins', sans-serif;
 }
 
 .s003 form .inner-form .input-field input::selection {
     background: #5fA084;
-    color: #FFF;
+    color: #FFFFFF;
 }
 
 .s003 form .inner-form .input-field input:hover, .s003 form .inner-form .input-field input:focus {
