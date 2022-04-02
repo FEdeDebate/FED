@@ -9,11 +9,11 @@ srch.addEventListener("keydown", function (e) {
 var alertExists = false;
 var close;
 var i;
+var usernames = ["A01723738", "A01723546", "A01723803", "A01723810"]; //list of people on which we have content
 
 function redirect() {
 
     const studentID = document.querySelector('input').value.replace(/[^A-z0-9]/gi, '').toUpperCase(); //get the string of text after the last / in the URL
-    var usernames = ["A01723738", "A01723546", "A01723803", "A01723810"]; //list of people on which we have content
     var similarities = []; //array of percentage of similarities between list of students and entered student
 
     for (let i = 0; i < usernames.length; i++) //for every student we have, run the similarity calculation, and push it to the similarities array
