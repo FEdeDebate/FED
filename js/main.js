@@ -1,4 +1,3 @@
-
 var srch = document.getElementById("search");
 srch.addEventListener("keydown", function (e) {
     if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
