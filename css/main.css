@@ -18,6 +18,11 @@ body {
   overflow-y: hidden;
 }
 
+::selection {
+    color: #5fA084;
+    background-color: #0e0e0e;
+}
+
 /**
  * Add the correct display in IE 9-.
  */
@@ -34,9 +39,37 @@ section {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
+
+
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+}
+
+h3 {
+    color: #5fA084;
+    text-align: center;
+}
+
+button.links {
+    background-color: #1a1a1a;
+    color: #c45886;
+    padding: 16px 32px;
+    margin-bottom: 32px;
+    text-align: center;
+    display: inline-block;
+    border: transparent 2px solid;
+    border-radius: 12px;
+    transition: all 0.2s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-size: 2em;
+    display: flex;
+}
+
+button.links:hover {
+    cursor: pointer;
+    border-color: #c45886;
 }
 
 /* Grouping content
@@ -218,7 +251,6 @@ svg:not(:root) {
  * 1. Change the font styles in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
-button,
 input,
 optgroup,
 select,
@@ -497,7 +529,6 @@ legend {
 
 /* background color */
 .s003 {
-  min-height: 100vh;
   display: -ms-flexbox;
   display: flex;
   display: block;
@@ -506,10 +537,35 @@ legend {
   -ms-flex-align: center;
       align-items: center;
   font-family: 'Poppins', sans-serif;
-  background-color: #2C3D3B;
   background-size: cover;
   background-position: center center;
   padding: 15px; 
+}
+
+.s003home {
+    display: -ms-flexbox;
+    display: flex;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+    background-position: center center;
+    padding: 15px; 
+
+  max-width: 50%;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 /* view where logos and search box reside */
@@ -525,17 +581,19 @@ legend {
 }
 
 /* FED logo */
-.s003 .FEDLogo {
-  display: block;
-  z-index: 5;
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  margin-bottom: 3rem;
-  left: 50%;
-  width: 50%;
-   height: 50%;
-}
+.FEDLogo {
+    display: block;
+    z-index: 5;
+    margin: auto;
+    max-width: 65%;
+    width: auto;
+    padding: 10px;
+    margin-bottom: 3rem;
+  }
+  
+  .FEDLogo.homepage {
+    margin-bottom: 0rem;
+  }
 
 /* h1 style, used for 404.html */
 .s003 h1 {

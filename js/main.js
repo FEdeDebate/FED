@@ -28,13 +28,13 @@ function redirect() {
 
     if (usernames.includes(studentID)) //if the ID entered matches the ID with the highest similarity, then the user entered their ID correctly, and they can be diredected to their result
     {
-        window.location.href += "resultados/2022/" + studentID + ".pdf";
+        window.location.href += "2022/" + studentID + ".pdf";
     }
     else if ((max >= 75)) //if the user didn't enter their ID correctly, but there's an ID that is 75% or more similar, they can be redirected to their result if they decide to
     {
         document.querySelector('input').select()
             var div = document.createElement("div");
-            div.innerHTML = "<span class=\"closebtn\" >&times;</span>  <strong>Ups!</strong> La matricula que escribiste no está en nuestro sistema. Querías decir <a href=\"" + window.location.href + "resultados/2022/" + usernames[index] + ".pdf\">" + usernames[index] + "?";
+            div.innerHTML = "<span class=\"closebtn\" >&times;</span>  <strong>Ups!</strong> La matricula que escribiste no está en nuestro sistema. Querías decir <a href=\"" + window.location.href + "2022/" + usernames[index] + ".pdf\">" + usernames[index] + "?";
             div.setAttribute("class", "alert")
             document.body.prepend(div);
             alertExists = true;
@@ -134,4 +134,8 @@ function editDistance(s1, s2)
             costs[s2.length] = lastValue;
     }
     return costs[s2.length];
+}
+
+function gotolink(url) {
+    window.open(url)
 }
