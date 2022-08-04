@@ -3,7 +3,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
     <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
     <meta property="og:site_name" content="FED - 404" /> <!-- website name -->
     <meta property="og:site" content="https://fededebate.github.io/Evento/" /> <!-- website link -->
@@ -14,26 +13,24 @@
 
     <!-- Webpage Title -->
     <title>FED - 404</title>
-    <!-- test comment -->
-
 
     <base href="https://fededebate.github.io/Evento/" /> 
     <!-- the website, in GitHub, is https://FEdeDebate.github.io/Evento, which 
     means that the root of the document should be /Evento when deployed in GH Pages -->
 
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet" />
     <link rel="icon" href="images/404favicon.svg">
-
+    <style>
+      html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}html{height:100%}*{box-sizing:border-box}.holder{min-height:100vh;display:-ms-flexbox;display:flex;flex-direction:column;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;font-family:Poppins,sans-serif;background-color:#2c3d3b;background-size:cover;background-position:center center;padding:15px}h1{color:#c45886;font-size:2em;margin:.67em 0}h2{color:#5fa084;font-size:1.5em}a{color:#5fa084;background-color:transparent;-webkit-text-decoration-skip:objects}
+    </style>
   </head>
-  <body onload="start();">
-    <div class="s003">
-      <h1>Ups! Algo salió mal.</h1>
-      <h2 id="comprobar" ></h2>
-      <h2><a href="">regresa para intentar de nuevo?</a></h2>
+
+  <body onload="start('id');">
+    <div class="holder">
+      <h1>Ups! Esta matrícula no es válida.</h1>
+      <h2 id="comprobar"></h2>
+      <h2><a href="https://FEdeDebate.github.io/Evento/resultados/">regresa para intentar de nuevo</a></h2>
     </div>
   </body>
-
   <script src="js/404.js"></script>
-  <script src="js/nodarkreader.min.js"></script>
 </html>
