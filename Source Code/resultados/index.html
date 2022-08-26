@@ -18,7 +18,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
     <meta name="darkreader" content="NO-DARKREADER-PLUGIN" />
 
-    <base href="https://fededebate.github.io/Evento/" /> 
+    <!--base href="https://fededebate.github.io/Evento/" /--> 
+    <base href="/" />
     <!-- the website, in GitHub, is https://FEdeDebate.github.io/Evento, which 
     means that the root of the document should be /Evento when deployed in GH Pages -->
 
@@ -29,7 +30,7 @@
     <link rel="icon" href="images/favicon.svg">
   </head>
 
-  <body>
+  <body style="background-color: #2C3D3B;">
     <div class="holder">
       <form autocomplete="off" spellcheck="false">
         <!-- Start FED Logo -->
@@ -56,6 +57,13 @@
             <!-- End search button -->
           </div>
         </div>
+        <h4 id="errorMessage" style="
+        color: transparent;
+        background-color: transparent;
+        border-radius: 10px;
+        border: 8px solid transparent;
+        width: 50vw;
+        ">pre-error text</h4>
         <!-- End text input -->
       </form>
     </div>

@@ -12,6 +12,8 @@ var usernames = ["A01723738", "A01723546", "A01723803", "A01723810"]; //list of 
 
 function redirect() {
 
+    var errorMessage = document.getElementById("errorMessage");
+
     const studentID = document.querySelector('input').value.replace(/[^A-z0-9]/gi, '').toUpperCase(); //get the string of text after the last / in the URL
     var similarities = []; //array of percentage of similarities between list of students and entered student
 
@@ -33,58 +35,27 @@ function redirect() {
     else if ((max >= 75)) //if the user didn't enter their ID correctly, but there's an ID that is 75% or more similar, they can be redirected to their result if they decide to
     {
         document.querySelector('input').select()
-            var div = document.createElement("div");
-            div.innerHTML = "<span class=\"closebtn\" >&times;</span>  <strong>Ups!</strong> La matricula que escribiste no está en nuestro sistema. Querías decir <a href=\"" + window.location.href + "2022/" + usernames[index] + ".pdf\">" + usernames[index] + "?";
-            div.setAttribute("class", "alert")
-            document.body.prepend(div);
-            alertExists = true;
-
-            i;
-            close = document.getElementsByClassName("closebtn");
-            for (i = 0; i < close.length; i++) {
-                close[i].onclick = function(){
-                var div = this.parentElement;
-                div.style.opacity = "0";
-                setTimeout(function(){ div.style.display = "none"; }, 600);
-                }
-            }
+        errorMessage.innerHTML = "Ups! La matricula que escribiste no está en nuestro sistema. Querías decir <a href=\"" + window.location.href + "2022/" + usernames[index] + ".pdf\">" + usernames[index] + "?";
+        makeErrorMessageVisible();
     }
     else if (studentID == "")
     {
-        document.querySelector('input').select()
-        var div = document.createElement("div");
-        div.innerHTML = "<span class=\"closebtn\" >&times;</span>  <strong>Porfavor escribe tu matricula</strong>";
-        div.setAttribute("class", "alert")
-        document.body.prepend(div);
-        alertExists = true;
-
-        close = document.getElementsByClassName("closebtn");
-        for (i = 0; i < close.length; i++) {
-            close[i].onclick = function(){
-            var div = this.parentElement;
-            div.style.opacity = "0";
-            setTimeout(function(){ div.style.display = "none"; }, 600);
-            }
-        }
+        errorMessage.innerHTML = "Porfavor escribe tu matrícula.";
+        makeErrorMessageVisible();
     }
     else
     {
-        document.querySelector('input').select()
-        var div = document.createElement("div");
-        div.innerHTML = "<span class=\"closebtn\" >&times;</span>  <strong>Ups!</strong> No reconocimos tu matricula. Intenta de nuevo!";
-        div.setAttribute("class", "alert")
-        document.body.prepend(div);
-        alertExists = true;
-
-        close = document.getElementsByClassName("closebtn");
-        for (i = 0; i < close.length; i++) {
-            close[i].onclick = function(){
-            var div = this.parentElement;
-            div.style.opacity = "0";
-            setTimeout(function(){ div.style.display = "none"; }, 600);
-            }
-        }
+        errorMessage.innerHTML = "Ups! No encontramos tu matrícula. Intenta de nuevo.";
+        makeErrorMessageVisible();
     }
+}
+
+function makeErrorMessageVisible() {
+    var errorMessage = document.getElementById("errorMessage");
+    errorMessage.style.color = "#C45886";
+    errorMessage.style.backgroundColor = "#3D202F";
+    errorMessage.style.border = "8px solid #3D202F";
+
 }
 
 function similarity(s1, s2)
