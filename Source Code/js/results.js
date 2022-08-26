@@ -58,14 +58,14 @@ function makeErrorMessageVisible() {
 
 }
 
-function similarity(s1, s2)
+function similarity(string1, string2)
 {
-    var longer = s1;
-    var shorter = s2;
-    if (s1.length < s2.length)
+    var longer = string1;
+    var shorter = string2;
+    if (string1.length < string2.length)
     {
-        longer = s2;
-        shorter = s1;
+        longer = string2;
+        shorter = string1;
     }
     var longerLength = longer.length;
     if (longerLength === 0)
@@ -75,16 +75,16 @@ function similarity(s1, s2)
     return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
 }
 
-function editDistance(s1, s2) 
+function editDistance(string1, string2) 
 {
-    s1 = s1.toLowerCase();
-    s2 = s2.toLowerCase();
+    string1 = string1.toLowerCase();
+    string2 = string2.toLowerCase();
 
     var costs = new Array();
-    for (var i = 0; i <= s1.length; i++) 
+    for (var i = 0; i <= string1.length; i++) 
     {
         var lastValue = i;
-        for (var j = 0; j <= s2.length; j++) 
+        for (var j = 0; j <= string2.length; j++) 
         {
             if (i == 0)
             costs[j] = j;
@@ -93,7 +93,7 @@ function editDistance(s1, s2)
                 if (j > 0)
                 {
                     var newValue = costs[j - 1];
-                    if (s1.charAt(i - 1) != s2.charAt(j - 1))
+                    if (string1.charAt(i - 1) != string2.charAt(j - 1))
                     newValue = Math.min(Math.min(newValue, lastValue),
                         costs[j]) + 1;
                     costs[j - 1] = lastValue;
@@ -102,9 +102,9 @@ function editDistance(s1, s2)
             }
         }
         if (i > 0)
-            costs[s2.length] = lastValue;
+            costs[string2.length] = lastValue;
     }
-    return costs[s2.length];
+    return costs[string2.length];
 }
 
 function gotolink(url) {
