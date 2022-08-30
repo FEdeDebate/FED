@@ -1,8 +1,8 @@
 var usernames = [
-    "A01723738", // Martina Rodríguez
-    "A01723546", // Carolina Mercado González
-    "A01723803", // Jorge Luis Martínez Villarreal
-    "A01723810" // Sebastián Rodríguez Ortiz
+    { "ID" : "A01723738", "Name" : "Martina Rodríguez" },
+    { "ID" : "A01723546", "Name" : "Carolina Mercado González" },
+    { "ID" : "A01723803", "Name" : "Jorge Luis Martínez Villarreal" },
+    { "ID" : "A01723810", "Name" : "Sebastián Rodríguez Ortiz" }
 ]; 
 
 var errorMessage = document.getElementById("errorMessage");
@@ -16,7 +16,7 @@ function redirect() {
 
     // For every student we have, run the similarity calculation, and push it to the similarities array
     for (let i = 0; i < usernames.length; i++) {
-        var perc=Math.round(similarity(studentID,usernames[i])*10000)/100; //calculate the percentage of similarity between the entered student and the current student
+        var perc=Math.round(similarity(studentID,usernames[i].ID)*10000)/100; //calculate the percentage of similarity between the entered student and the current student
         similarities.push(perc) //push the percentage to the similarities array
     }
     var max = Math.max(...similarities) //get the value of the highest similarity
@@ -28,7 +28,7 @@ function redirect() {
 
     // If the user didn't enter their ID correctly, but there's an ID that is 75% or more similar, they can be redirected to their result if they decide to.
     else if ((max >= 75)) displayErrorMessage(
-        "Ups! La matricula que escribiste no está en nuestro sistema. Querías decir <a href=\"" + window.location.href + "2022/" + usernames[index] + ".pdf\">" + usernames[index] + "?");
+        "Ups! La matricula que escribiste no está en nuestro sistema. Querías decir <a href=\"" + window.location.href + "2022/" + usernames[index].ID + ".pdf\">" + usernames[index].ID + " (" + usernames[index].Name + ")?");
     // If the user didn't enter anything into the search bar, ask them to enter their ID.
     else if (studentID == "") displayErrorMessage("Porfavor escribe tu matrícula.");
     // If the user entered an ID that is not in the list, tell them to try again.
