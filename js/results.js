@@ -24,7 +24,7 @@ function redirect() {
 
 
     // If the ID entered matches one of the IDs in the list, redirect to the results page of that person
-    if (usernames.includes(studentID)) window.location.href += "2022/" + studentID + ".pdf";
+    if (usernames.ID.includes(studentID)) window.location.href += "2022/" + studentID + ".pdf";
 
     // If the user didn't enter their ID correctly, but there's an ID that is 75% or more similar, they can be redirected to their result if they decide to.
     else if ((max >= 75)) displayErrorMessage(
