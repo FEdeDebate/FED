@@ -1,9 +1,23 @@
-var usernames = [
-    { "ID" : "A01723738", "Name" : "Martina Rodríguez" },
-    { "ID" : "A01723546", "Name" : "Carolina Mercado González" },
-    { "ID" : "A01723803", "Name" : "Jorge Luis Martínez Villarreal" },
-    { "ID" : "A01723810", "Name" : "Sebastián Rodríguez Ortiz" }
-]; 
+// things to change
+const data = 
+{
+    "fed1" : [
+        { "ID" : "A01723738", "Name" : "Martina Rodríguez" },
+        { "ID" : "A01723546", "Name" : "Carolina Mercado González" },
+        { "ID" : "A01723803", "Name" : "Jorge Luis Martínez Villarreal" },
+        { "ID" : "A01723810", "Name" : "Sebastián Rodríguez Ortiz" }
+    ]
+}
+var version = "fed1/" //the version of the event that is being searched
+var usernames = data[version.slice(0, -1)]; //
+
+
+//
+//
+// DO NOT CHANGE
+//
+//
+
 
 var errorMessage = document.getElementById("errorMessage");
 document.getElementById("search").addEventListener("keydown", function (e) { if (e.code === "Enter") redirect(); } );
@@ -24,11 +38,11 @@ function redirect() {
 
 
     // If the ID entered matches one of the IDs in the list, redirect to the results page of that person
-    if (usernames.some(e => e.ID === studentID)) window.location.href += "2022/" + studentID + ".pdf";
+    if (usernames.some(e => e.ID === studentID)) window.location.href += version + studentID + ".pdf";
 
     // If the user didn't enter their ID correctly, but there's an ID that is 75% or more similar, they can be redirected to their result if they decide to.
     else if (max >= 0.75) displayErrorMessage(
-        "Ups! La matricula que escribiste no está en nuestro sistema. Querías decir <a href=\"" + window.location.href + "2022/" + usernames[index].ID + ".pdf\">" + usernames[index].ID + " (" + usernames[index].Name + ")?");
+        "Ups! La matricula que escribiste no está en nuestro sistema. Querías decir <a href=\"" + window.location.href + version + usernames[index].ID + ".pdf\">" + usernames[index].ID + " (" + usernames[index].Name + ")?");
     // If the user didn't enter anything into the search bar, ask them to enter their ID.
     else if (studentID == "") displayErrorMessage("Porfavor escribe tu matrícula.");
     // If the user entered an ID that is not in the list, tell them to try again.
@@ -75,7 +89,6 @@ function editDistance(string1, string2)
         } if (i > 0) costs[string2.length] = lastValue;
     } return costs[string2.length];
 }
-
 
 function JaroWrinker (s1, s2) {
     var m = 0;
