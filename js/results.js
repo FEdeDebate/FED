@@ -42,7 +42,9 @@ function redirect() {
 
     // If the user didn't enter their ID correctly, but there's an ID that is 75% or more similar, they can be redirected to their result if they decide to.
     else if (max >= 0.75) displayErrorMessage(
-        "Ups! La matricula que escribiste no está en nuestro sistema. Querías decir <a href=\"" + window.location.href + version + usernames[index].ID + ".pdf\">" + usernames[index].ID + " (" + usernames[index].Name + ")?");
+        "Ups! La matricula que escribiste no está en nuestro sistema. Querías decir <a href=\"" 
+        + window.location.href + version + usernames[index].ID + ".pdf\">" + usernames[index].ID + " (" 
+        + usernames[index].Name + ")?");
     // If the user didn't enter anything into the search bar, ask them to enter their ID.
     else if (studentID == "") displayErrorMessage("Porfavor escribe tu matrícula.");
     // If the user entered an ID that is not in the list, tell them to try again.
