@@ -8,4 +8,4 @@ const data =
         { "ID" : "A01723810", "Name" : "Sebastián Rodríguez Ortiz" },
     ]
 }
-const defaultversion = "FED 1" //the version of the event that is being searched, add a slash at the end
+const defaultversion = "FED 1" //the version of the event that is being searched, in this format: "FED [edition]"
