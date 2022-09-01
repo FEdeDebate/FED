@@ -4,7 +4,17 @@
 //
 //
 
-var usernames = data[version.slice(0, -1)]; //
+var version = defaultversion;
+document.getElementById("choices-single-default").value = version;
+
+var usernames = data[version]; //get the list of students for the version that is selected
+
+
+function fedEditionChanged() {
+    version = document.getElementById("choices-single-default").value;
+    usernames = data[version]
+}
+
 
 var errorMessage = document.getElementById("errorMessage");
 document.getElementById("search").addEventListener("keydown", function (e) { if (e.code === "Enter") redirect(); } );
@@ -16,6 +26,7 @@ function redirect() {
 
 
     // For every student we have, run the similarity calculation, and push it to the similarities array
+    if (usernames == undefined) displayErrorMessage("¿Seguro que escribiste el año correcto?");
     for (let i = 0; i < usernames.length; i++) {
         var perc = JaroWrinker(studentID.substring(5), usernames[i].ID.substring(5));
         similarities.push(perc) //push the percentage to the similarities array
@@ -25,17 +36,17 @@ function redirect() {
 
 
     // If the ID entered matches one of the IDs in the list, redirect to the results page of that person
-    if (usernames.some(e => e.ID === studentID)) window.location.href += version + studentID + ".pdf";
+    if (usernames.some(e => e.ID === studentID)) window.location.href += version.replace(" ", "") + "/" + studentID + ".pdf";
 
     // If the user didn't enter their ID correctly, but there's an ID that is 75% or more similar, they can be redirected to their result if they decide to.
     else if (max >= 0.75) displayErrorMessage(
         "Ups! La matricula que escribiste no está en nuestro sistema. Querías decir <a href=\"" 
-        + window.location.href + version + usernames[index].ID + ".pdf\">" + usernames[index].ID + " (" 
+        + window.location.href + version.replace(" ", "") + "/" + usernames[index].ID + ".pdf\">" + usernames[index].ID + " (" 
         + usernames[index].Name + ")?");
     // If the user didn't enter anything into the search bar, ask them to enter their ID.
     else if (studentID == "") displayErrorMessage("Porfavor escribe tu matrícula.");
     // If the user entered an ID that is not in the list, tell them to try again.
-    else displayErrorMessage("Ups! No encontramos tu matrícula. Intenta de nuevo.");
+    else displayErrorMessage("Ups! No encontramos tu matrícula. ¿Tal vez buscabas otra edición de FED?");
 }
 
 function displayErrorMessage(text) {
