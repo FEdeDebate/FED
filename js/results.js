@@ -26,7 +26,7 @@ function redirect() {
 
 
     // For every student we have, run the similarity calculation, and push it to the similarities array
-    if (usernames == undefined) displayErrorMessage("¿Seguro que escribiste el año correcto?");
+    if (usernames == undefined) displayErrorMessage("¿Seguro que escogiste el año correcto?");
     for (let i = 0; i < usernames.length; i++) {
         var perc = JaroWrinker(studentID.substring(5), usernames[i].ID.substring(5));
         similarities.push(perc) //push the percentage to the similarities array
