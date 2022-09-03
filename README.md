@@ -38,7 +38,7 @@ const data =
         { "ID" : "A01283020", "Name" : "Ximena Xuelin Cham Pérez" },
         { "ID" : "A01724365", "Name" : "Alfredo Esteban Peña Gochicoa" },
         { "ID" : "A01724440", "Name" : "Lía Midory Campos Quiñones" },
-    ]
+    ],
 }
 const defaultversion = "FED 1"
 ```
