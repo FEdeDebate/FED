@@ -7,7 +7,7 @@
 //
 
 var version = defaultversion;
-document.getElementById("choices-single-default").value = version;
+document.getElementById("select").value = version;
 var newSearchId = "search-" + Math.round(Math.random() * 999999)
 document.getElementById("search").id = newSearchId;
 
@@ -15,7 +15,7 @@ var usernames = data[version]; //get the list of students for the version that i
 
 
 function fedEditionChanged() {
-    version = document.getElementById("choices-single-default").value;
+    version = document.getElementById("select").value;
     usernames = data[version]
 }
 
