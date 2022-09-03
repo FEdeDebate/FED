@@ -1,3 +1,5 @@
+
+
 //
 //
 // DO NOT CHANGE
@@ -6,6 +8,8 @@
 
 var version = defaultversion;
 document.getElementById("choices-single-default").value = version;
+var newSearchId = "search-" + Math.round(Math.random() * 999999)
+document.getElementById("search").id = newSearchId;
 
 var usernames = data[version]; //get the list of students for the version that is selected
 
@@ -17,7 +21,7 @@ function fedEditionChanged() {
 
 
 var errorMessage = document.getElementById("errorMessage");
-document.getElementById("search").addEventListener("keydown", function (e) { if (e.code === "Enter") redirect(); } );
+document.getElementById(newSearchId).addEventListener("keydown", function (e) { if (e.code === "Enter") redirect(); } );
 
 function redirect() {
 

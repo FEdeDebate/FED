@@ -6,6 +6,6 @@ const data =
         { "ID" : "A01723546", "Name" : "Carolina Mercado González" },
         { "ID" : "A01723803", "Name" : "Jorge Luis Martínez Villarreal" },
         { "ID" : "A01723810", "Name" : "Sebastián Rodríguez Ortiz" },
-    ]
+    ],
 }
-const defaultversion = "FED 1" //the version of the event that is being searched, in this format: "FED [edition]"
+const defaultversion = "FED 1" //the version of the event that is selected by default, in this format: "FED [edition]"
