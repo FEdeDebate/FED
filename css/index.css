@@ -741,7 +741,7 @@ h6 {
 .u-button-style.u-black,
 .u-button-style.u-black[class*=u-border-] {
   color: #fff !important;
-  background-color: #255957 !important;
+  background-color: #255957;
   transition: all .2s ease-in-out
 }
 
@@ -770,14 +770,26 @@ a.u-button-style.u-hover-grey-70:hover,
 a.u-button-style.u-hover-grey-70[class*=u-border-]:focus,
 a.u-button-style.u-hover-grey-70[class*=u-border-]:hover {
   color: #fff !important;
-  background-color: #5fa084 !important
+  background-color: #5fa084
 }
 
 .u-button-style.u-border-grey-75 {
-  border-color: #255957 !important;
-  background-color: #255957 !important;
+  border-color: #255957;
+  background-color: #255957 ;
   color: #fff !important;
   transition: all .2s ease-in-out
+}
+
+.btn-disabled {
+  border-color: #3D202F !important;
+  background-color: #3D202F !important;
+}
+
+.btn-disabled:hover {
+  border-color: #3D202F !important;
+  background-color: #3D202F !important;
+  cursor: default !important;
+  pointer-events: default !important;
 }
 
 .u-body {

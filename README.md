@@ -27,17 +27,32 @@ Debería verse algo así:
 const data = 
 {
     "FED 0" : [
-        { "ID" : "A01723738", "Name" : "Martina Rodríguez" },
-        { "ID" : "A01723546", "Name" : "Carolina Mercado González" },
-        { "ID" : "A01723803", "Name" : "Jorge Luis Martínez Villarreal" },
-        { "ID" : "A01723810", "Name" : "Sebastián Rodríguez Ortiz" },
+        { 
+        "ID" : "A01723738", 
+        "Name" : "Martina Rodríguez",
+        "School" : "PrepaTec",
+        "Semester" : 3 },
+
+        { 
+        "ID" : "A01723546",
+        "Name" : "Carolina Mercado González",
+        "School" : "PrepaTec",
+        "Semester" : 3 },
+
+        {
+        "ID" : "A01723803",
+        "Name" : "Jorge Luis Martínez Villarreal",
+        "School" : "PrepaTec",
+        "Semester" : 3 },
+
+        { 
+        "ID" : "A01723810",
+        "Name" : "Sebastián Rodríguez Ortiz",
+        "School" : "PrepaTec",
+        "Semester" : 3 },
     ],
     "FED 1" : [
-        { "ID" : "A01723833", "Name" : "Valeria Monterrubio Medina" },
-        { "ID" : "A01723462", "Name" : "Natalia Treviño Ibarra" },
-        { "ID" : "A01283020", "Name" : "Ximena Xuelin Cham Pérez" },
-        { "ID" : "A01724365", "Name" : "Alfredo Esteban Peña Gochicoa" },
-        { "ID" : "A01724440", "Name" : "Lía Midory Campos Quiñones" },
+        { "_comment" : "el resto de la información aquí (...)" }
     ],
 }
 const defaultversion = "FED 1"
