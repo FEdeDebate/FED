@@ -59,9 +59,9 @@ const defaultversion = "FED 1"
 ```
 
 ### Para agregar nuevas evaluaciones a la base de datos
-Nombra el PDF con este formato: "A01233456.pdf", usando la matrícula del participante; y pon el archivo en el folder de su edición correspondiente [aquí](resultados/). 
+Nombra el PDF con este formato: "A01233456.pdf", usando la matrícula del participante; y pon el archivo en la carpeta de su edición correspondiente [aquí](resultados/). 
 
-Debería verse algo así la estructura de folders:
+Debería verse algo así la estructura de carpetas:
 
 ```BASH
 ├── resultados
@@ -85,8 +85,8 @@ Debería verse algo así la estructura de folders:
 ### Para generar matrículas a estudiantes que no son del Tec
 Genera un número aleatorio del `001` al `999`, y antepon la edición de FED y su preparatoria en minúsculas, con un `-` separándolos. Por ejemplo:
 
- para un estudiante de la UDEM en FED 1: `01-udem-681`
- para un estudiante del APS en FED 3: `03-aps-650`
- para un estudiante del Liceo en FED 11: `11-liceo-654`
+ para un estudiante de la UDEM en FED 1: `01-udem-681`  
+ para un estudiante del APS en FED 3: `03-aps-650`  
+ para un estudiante del Liceo en FED 11: `11-liceo-654`  
 
  asegúrate de que esa matrícula no esté ya en uso. Todas las matrículas usadas en FED están en [este archivo](js/data.js), puedes usar `ctrl+f` en windows / linux o `cmd+f` en mac para buscar entre todas por la nueva matrícula.
