@@ -10,6 +10,11 @@ body {
   margin: 0
 }
 
+.link {
+  color: #5FA084 !important;
+  background-color: transparent
+}
+
 .section .u-sheet-1 {
   min-height: 1022px
 }
@@ -493,6 +498,16 @@ a:focus {
   .u-sheet {
     width: var(--theme-sheet-width-xs) !important
   }
+
+  .fed-logo {
+    display: none !important;
+
+  }
+
+  .u-repeater {
+    display: grid;
+    grid-template-columns: repeat(3, 33.33333333%)
+  }
 }
 
 .u-container-layout {
@@ -778,6 +793,13 @@ a.u-button-style.u-hover-grey-70[class*=u-border-]:hover {
   border-color: #255957;
   background-color: #255957 ;
   color: #fff !important;
+  transition: all .2s ease-in-out
+}
+
+.u-button-style.highlighted-button {
+  border-color: #5FA084;
+  background-color: #5FA084 ;
+  color: #183534 !important;
   transition: all .2s ease-in-out
 }
 
