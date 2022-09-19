@@ -815,6 +815,16 @@ a.u-button-style.u-hover-grey-70[class*=u-border-]:hover {
   pointer-events: default !important;
 }
 
+.btn-quasiabled {
+  border-color: #7b5223 !important;
+  background-color: #7b5223 !important;
+}
+
+.btn-quasiabled:hover {
+  border-color: #ba7e3a !important;
+  background-color: #ba7e3a !important;
+}
+
 .u-body {
   --theme-sheet-width-xl: 1140px;
   --theme-sheet-width-lg: 940px;
