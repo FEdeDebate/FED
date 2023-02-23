@@ -10,8 +10,22 @@ body {
   margin: 0
 }
 
+:root {
+  --background: #2C3D3B;
+  --backgroundDark: #253331;
+  --backgroundSuperdark: #131a18;
+  --backgroundSecondary: #3D202F;
+  --backgroundSecondaryDark: #1a0d14;
+  --base: #255957;
+  --primaryColor: #5FA084;
+  --secondary: #C45886;
+  --secondaryLight: #FF85B9;
+  --textDark: #EFEFEF;
+  --textLight: #222222;
+}
+
 .link {
-  color: #5FA084 !important;
+  color: var(--primaryColor) !important;
   background-color: transparent
 }
 
@@ -316,7 +330,7 @@ body {
 }
 
 ::selection {
-  background: #255957;
+  background: var(--base);
   color: #fff
 }
 
@@ -757,7 +771,7 @@ h6 {
 .u-button-style.u-black,
 .u-button-style.u-black[class*=u-border-] {
   color: #fff !important;
-  background-color: #255957;
+  background-color: var(--base);
   transition: all .2s ease-in-out
 }
 
@@ -772,7 +786,7 @@ a.u-button-style.u-hover-black:hover,
 a.u-button-style.u-hover-black[class*=u-border-]:focus,
 a.u-button-style.u-hover-black[class*=u-border-]:hover {
   color: #fff !important;
-  background-color: #5fa084 !important
+  background-color: var(--primaryColor) !important
 }
 
 .u-hover-grey-70:focus,
@@ -786,31 +800,31 @@ a.u-button-style.u-hover-grey-70:hover,
 a.u-button-style.u-hover-grey-70[class*=u-border-]:focus,
 a.u-button-style.u-hover-grey-70[class*=u-border-]:hover {
   color: #fff !important;
-  background-color: #5fa084
+  background-color: var(--primaryColor)
 }
 
 .u-button-style.u-border-grey-75 {
-  border-color: #255957;
-  background-color: #255957 ;
+  border-color: var(--base);
+  background-color: var(--base);
   color: #fff !important;
   transition: all .2s ease-in-out
 }
 
 .u-button-style.highlighted-button {
-  border-color: #5FA084;
-  background-color: #5FA084 ;
-  color: #183534 !important;
+  border-color: var(--primaryColor);
+  background-color: var(--primaryColor);
+  color: var(--backgroundDark) !important;
   transition: all .2s ease-in-out
 }
 
 .btn-disabled {
-  border-color: #3D202F !important;
-  background-color: #3D202F !important;
+  border-color: var(--backgroundSecondary) !important;
+  background-color: var(--backgroundSecondary) !important;
 }
 
 .btn-disabled:hover {
-  border-color: #3D202F !important;
-  background-color: #3D202F !important;
+  border-color: var(--backgroundSecondary) !important;
+  background-color: var(--backgroundSecondary) !important;
   cursor: default !important;
   pointer-events: default !important;
 }
@@ -831,6 +845,125 @@ a.u-button-style.u-hover-grey-70[class*=u-border-]:hover {
   --theme-sheet-width-md: 720px;
   --theme-sheet-width-sm: 540px;
   --theme-sheet-width-xs: 340px
+}
+
+.timer-wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.timer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.minute-lf, .minute-rg, .second-lf, .second-rg {
+  width: 240px;
+  text-align: center;
+} 
+
+.time {
+  font: 500 clamp(4rem, 15vw, 8rem) Poppins;
+  color: var(--primaryColor);
+  box-shadow: 0px 1rem 1rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.separator {
+  font: 500 clamp(4rem, 15vw, 8rem) Poppins;
+  color: var(--primaryColor);
+}
+
+.time-current {
+  color: var(--primaryColor); 
+  background-color: var(--backgroundSuperdark);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.time-current {
+  z-index: 1;
+}
+
+.time-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  transform: perspective(2000px);
+  transform-origin: center top;
+}
+
+.timer-controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.control {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border: none;
+  background: none;
+  font: 500 1.5rem Poppins;
+  line-height: 2.25rem;
+  cursor: pointer;
+  background-color: var(--backgroundSuperdark);
+  box-shadow: 0px 1rem 1rem 0.5rem rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  transition: color 1s ease, background-color 1s ease, translate 0.1s ease;
+}
+
+.control:hover {
+  background-color: #000;
+}
+
+.control-reset { background-color: var(--backgroundSecondaryDark); }
+
+.control-start {
+  transition: 0.2s ease-in-out;
+}
+
+.play {
+  width: 28px;
+  height: 32px;
+  background: var(--primaryColor);
+  transition: inherit;
+  clip-path: polygon(0 0, 50% 25%, 50% 75%, 50% 75%, 50% 25%, 100% 50%, 100% 50%, 0 100%);
+}
+.play.playing {
+  clip-path: polygon(0 0, 40% 0, 40% 100%, 60% 100%, 60% 0, 100% 0, 100% 100%, 0 100%);
+}
+.reset {
+  width: 32px;
+  height: 32px;
+  background: var(--secondary);
+  transition: inherit;
+  clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.timerTime {
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+  background-color: var(--backgroundSuperdark);
+  color: var(--primaryColor);
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 20px;
+  resize: none;
+  outline: none;
+  text-align: center;
 }
 
 h2:not(.u-subtitle) {

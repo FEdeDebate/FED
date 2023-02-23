@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <title>FED - Timer</title>
+        <link rel="stylesheet" href="../css/style.css" media="screen">
+        <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+        
+        
+        <meta name="theme-color" content="#5FA084">
+        <meta property="og:title" content="Foro Estudiantil de Debate">
+        <meta property="og:description" content="">
+        <meta property="og:type" content="website">
+        <link rel="canonical" href="index.html">
+        <link rel="icon" href="../favicon.ico">
+      
+    </head>
+
+    <style>
+        *:not(script, style, head, head *) { display: block; margin: 0; padding: 0; box-sizing: border-box; }
+        * { transition: color 1s ease, background-color 1s ease, fill 1s ease; } </style>
+    
+    <body style="background-color: #2C3D3B;">
+        <div class="timer-wrapper">
+            <div class="timer">
+                <div class="minute-lf time">
+                    <span class="time-current" id="minute1">0</span>
+                </div>
+                <div class="minute-rg time">
+                    <span class="time-current" id="minute2">0</span>
+                </div>
+                <div class="separator">:</div>
+                <div class="second-lf time">
+                    <span class="time-current" id="second1">0</span>
+                </div>
+                <div class="second-rg time">
+                    <span class="time-current" id="second2">0</span>
+                </div>
+            </div>
+            <div class="timer-controls">
+                <button class="control-start control" onclick="startBtn()">
+                    <div class="play" id="play"></div>
+                </button>
+                <button class="control-reset control" onclick="resetBtn()">
+                    <div class="reset"></div>
+                </button>
+            </div>
+            <textarea id="timerInput" rows="1" cols="10" placeholder="05:00" class="timerTime" maxlength="5" onkeyup="this.value = this.value.replace(/[^0-9:]/g, ''); timerInputChanged();"></textarea>
+
+        </div>
+    </body>
+    <script src="timer.js"></script>
+</html>
