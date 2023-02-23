@@ -966,6 +966,17 @@ a.u-button-style.u-hover-grey-70[class*=u-border-]:hover {
   text-align: center;
 }
 
+.FEDLogo {
+  /* center the div horizontally */
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-bottom: 32px;
+}
+
 h2:not(.u-subtitle) {
   font-size: 2.25rem;
   line-height: 1.1;
