@@ -1,6 +1,6 @@
 // Define global variables to keep track of the timer state and values
 var isTimerRunning = false;
-var minutesSet = 5;
+var minutesSet = 0;
 var secondsSet = 0;
 var minutesRemaining = minutesSet;
 var secondsRemaining = secondsSet;
@@ -44,7 +44,10 @@ function updateTimerDisplay() {
         second2.textContent = remainingSeconds % 10;
     }
 }
-updateTimerDisplay();
+//updateTimerDisplay();
+playButton.classList.remove("playing");
+playButton.parentElement.style.opacity = 0.75;
+playButton.parentElement.style.pointerEvents = "none";
 
 function startTimer() {
     isTimerRunning = true;
